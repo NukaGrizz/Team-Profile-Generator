@@ -1,12 +1,12 @@
 const Engineer = require('../lib/Engineer');
 
 test('creates a new Engieer object', () => {
-    const manager = new Engineer('Joe', 2, 'Joe@mock.com', 'nukaGrizz')
+    const engineer = new Engineer('Joe', 2, 'Joe@mock.com', 'nukaGrizz')
 
-    expect(manager.name).toBe('Joe');
-    expect(manager.id).toEqual(expect.any(Number));
-    expect(manager.email).toBe('Joe@mock.com');
-    expect(manager.gitHub).toBe('nukaGrizz');
-    expect(manager.getRole()).toBe('Engineer');
+    expect(engineer.name).toBe('Joe');
+    expect(engineer.id).toEqual(expect.any(Number));
+    expect(engineer.email).toBe('Joe@mock.com');
+    expect(engineer.gitHub).toBe('nukaGrizz');
+    expect(engineer.getRole()).toBe('Engineer');
 
 })
