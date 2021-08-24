@@ -22,8 +22,12 @@
   ## Usage 
   
   To use this program complete the istallation instructions and from the root directory run 'node index' in the terminal command line. Answer all the questions and upon completion your new ReadMe.md will be created in the dist folder.
+
+  ## Walkthrough Video & ScreenShot
+
+  ![VIDEO](https://drive.google.com/file/d/1NlwZAZUuIESlWrxZBjd1MY15tYHITM-9/view?usp=sharing)
   
-  ![alt text](./assets/images/screenshot.png)
+  ![alt text](./assets/images/Screenshot.png)
   
   ## License
   
