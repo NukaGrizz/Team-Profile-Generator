@@ -26,7 +26,7 @@ const generateEmployees = employeesArr => {
       return `
           <article class="card m-4 employeeCard" style="width: 25rem;">
               <h2 class="m-2">${engineer.getName()}</h2>
-              <h3 class="m-2"><i class="fas fa-tools"></i> ${engineer.getRole}</h3>
+              <h3 class="m-2"><i class="fas fa-tools"></i> ${engineer.getRole()}</h3>
               <div class="card-body cardInfo">
                   <p class="card-text p-1">ID: ${engineer.getId()}</p>
                   <p class="card-text p-1">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></p>
