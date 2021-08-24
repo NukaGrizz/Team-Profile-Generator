@@ -1,5 +1,5 @@
 const Employee = require('../lib/Employee');
-
+// test that checks Employee.js working
 test('creates a new Employee object', () => {
     const employee = new Employee('Joe', 1, 'Joe@mock.com')
 
