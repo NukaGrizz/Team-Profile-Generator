@@ -12,8 +12,8 @@ test('creates a new Engieer object', () => {
     expect(engineer.gitHub).toBe('nukaGrizz');
     
 });
-
-test('creates a new Role for enginer', () =>{
+//test that checks Engineer getRole() is working
+test('creates a new Role for engineer', () =>{
     const engineer = new Engineer()
     expect(engineer.getRole()).toBe('Engineer');
 });

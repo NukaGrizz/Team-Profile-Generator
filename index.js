@@ -1,10 +1,8 @@
 const inquirer = require('inquirer');
-const Manager = require('./lib/Manager');
-const Engineer = require('./lib/Engineer');
-const Intern = require('./lib/Intern');
 const generatePage = require('./src/page-template');
 const { writeFile, copyFile } = require('./utils/generate-site');
 
+//Prompt user with questions
 const promptUser = () => {
   return inquirer.prompt([
     {
@@ -23,7 +21,7 @@ const promptUser = () => {
     {
       type: 'input',
       name: 'id',
-      message: 'Enter your Managers employee ID (Required)',
+      message: 'Enter your Managers employee ID. (Required)',
       validate: idInput => {
         if (idInput) {
           return true;
@@ -36,7 +34,7 @@ const promptUser = () => {
     {
       type: 'input',
       name: 'email',
-      message: 'Please enter your Managers email',
+      message: 'Please enter your Managers email.',
       validate: emailInput => {
         if (emailInput) {
           return true;
@@ -49,7 +47,7 @@ const promptUser = () => {
     {
       type: 'input',
       name: 'officeNumber',
-      message: 'Please enter your Managers Office Number',
+      message: 'Please enter your Managers Office Number.',
       validate: officeNumberInput => {
         if (officeNumberInput) {
           return true;
@@ -62,6 +60,7 @@ const promptUser = () => {
   ]);
 };
 
+// Question asked to user to add employees other than manager
 const promptMenu = teamData => {
     if (!teamData.members) {
         teamData.members = [];
@@ -91,7 +90,7 @@ const promptMenu = teamData => {
               {
                 type: 'input',
                 name: 'id',
-                message: "Enter your Employee's employee ID (Required)",
+                message: "Enter your Employee's employee ID. (Required)",
                 when: (answers) => answers.employeeType != 'Done',
                 validate: idInput => {
                   if (idInput) {
@@ -105,7 +104,7 @@ const promptMenu = teamData => {
               {
                 type: 'input',
                 name: 'email',
-                message: "Please enter your Employee's email",
+                message: "Please enter your Employee's email.",
                 when: (answers) => answers.employeeType != 'Done',
                 validate: emailInput => {
                   if (emailInput) {
@@ -119,7 +118,7 @@ const promptMenu = teamData => {
               {
                   type: 'input',
                   name: 'gitHub',
-                  message: "Please enter your Engineer's GitHub",
+                  message: "Please enter your Engineer's GitHub.",
                   when: (answers) => answers.employeeType === 'Engineer',
                 validate: gitHubInput => {
                   if (gitHubInput) {
@@ -133,7 +132,7 @@ const promptMenu = teamData => {
               {
                 type: 'input',
                 name: 'school',
-                message: "Please enter your intern's school",
+                message: "Please enter your intern's school.",
                 when: (answers) => answers.employeeType === 'Intern',
               validate: schoolInput => {
                 if (schoolInput) {
@@ -156,10 +155,7 @@ const promptMenu = teamData => {
             });
 };
 
-const testlog = teamData => {
-    console.log(teamData);
-}
-
+// application order of execution
 promptUser()
   .then(promptMenu)
   .then(teamData => {

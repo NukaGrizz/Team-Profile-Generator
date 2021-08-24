@@ -2,7 +2,7 @@ const Intern  = require('../lib/Intern');
 const Employee = require('../lib/Employee.js');
 
 jest.mock('../lib/Employee.js');
-
+// test that checks Intern.js working
 test('creates a new Intern object', () => {
     const intern = new Intern('Joe', 3, 'Joe@mock.com', 'GrizzSchool')
 
@@ -12,7 +12,8 @@ test('creates a new Intern object', () => {
     expect(intern.school).toBe('GrizzSchool');
 })
 
-test('creates a new Role for enginer', () =>{
+//test that checks Intern getRole() is working
+test('creates a new Role for intern', () =>{
     const intern = new Intern()
     expect(intern.getRole()).toBe('Intern');
 });

@@ -1,14 +1,19 @@
+/*webpage multi use vars begin */
 :root {
     --primary: blue;
     --secondary: white;
     --tertiary: black;
 }
+/*webpage multi use vars end*/
 
+/*header styles begin*/
 .title {
     background-color: var(--primary);
     color: var(--secondary);
 }
+/*header styles end*/
 
+/*employee card styles begin*/
 .employeeCard { 
     background-color: var(--primary);
     color: var(--secondary);
@@ -24,3 +29,4 @@
 .employeeCard p {
     border: solid 1px var(--tertiary);
 }
+/*employee card styles end*/

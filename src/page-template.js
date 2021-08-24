@@ -2,7 +2,7 @@ const Manager = require ('../lib/Manager');
 const Engineer = require ('../lib/Engineer');
 const Intern = require('../lib/Intern');
 
-// create the manager card 
+// Create the manager card 
 const generateManagerCard = (name, id, email, officeNumber) => {
   let manager = new Manager(name, id, email, officeNumber)
   return `
@@ -16,7 +16,7 @@ const generateManagerCard = (name, id, email, officeNumber) => {
             </div>
           </article>`
 };
-// create the employee cards
+// Create the employee cards
 const generateEmployees = employeesArr => {
   return `
   ${employeesArr
@@ -55,7 +55,7 @@ const generateEmployees = employeesArr => {
     .join('')}
     `;
   };
-
+//export this template below when this file is called upon
 module.exports = templateData => {
     // destructure page data by section
     const { members, name, id, email, officeNumber} = templateData;
