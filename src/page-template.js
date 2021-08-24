@@ -3,10 +3,10 @@ const generateManagerCard = (name, id, email, officeNumber) => {
   return `
           <article class="card m-4 employeeCard" style="width: 25rem;">
             <h2 class="m-2">${name}</h2>
-            <h3 class="m-2">Manager</h3>
+            <h3 class="m-2"><i class="fas fa-mug-hot"></i> Manager</h3>
             <div class="card-body cardInfo">
                 <p class="card-text p-1">ID: ${id}</p>
-                <p class="card-text p-1">Email: ${email}</p>
+                <p class="card-text p-1">Email: <a href="mailto:${email}">${email}</a></p>
                 <p class="card-text p-1">Office Number: ${officeNumber}</p>
             </div>
           </article>`;
@@ -20,11 +20,11 @@ const generateEmployees = employeesArr => {
       return `
           <article class="card m-4 employeeCard" style="width: 25rem;">
               <h2 class="m-2">${name}</h2>
-              <h3 class="m-2">${employeeType}</h3>
+              <h3 class="m-2"><i class="fas fa-tools"></i> ${employeeType}</h3>
               <div class="card-body cardInfo">
                   <p class="card-text p-1">ID: ${id}</p>
-                  <p class="card-text p-1">Email: ${email}</p>
-                  <p class="card-text p-1">GitHub: ${gitHub}</p>
+                  <p class="card-text p-1">Email: <a href="mailto:${email}">${email}</a></p>
+                  <p class="card-text p-1">GitHub: <a href="https://github.com/${gitHub}">${gitHub}</a></p>
               </div>
           </article>
     `;
@@ -36,10 +36,10 @@ const generateEmployees = employeesArr => {
       return `
           <article class="card m-4 employeeCard" style="width: 25rem;">
               <h2 class="m-2">${name}</h2>
-              <h3 class="m-2">${employeeType}</h3>
+              <h3 class="m-2"><i class="fas fa-user-graduate"></i> ${employeeType}</h3>
               <div class="card-body cardInfo">
                   <p class="card-text p-1">ID: ${id}</p>
-                  <p class="card-text p-1">Email: ${email}</p>
+                  <p class="card-text p-1">Email: <a href="mailto:${email}">${email}</a></p>
                   <p class="card-text p-1">School: ${school}</p>
               </div>
           </article>
@@ -63,6 +63,7 @@ module.exports = templateData => {
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <title>Team-Portfolio</title>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
       <link rel="stylesheet" href="./assets/style.css">
     </head>
   

@@ -1,0 +1,26 @@
+:root {
+    --primary: blue;
+    --secondary: white;
+    --tertiary: black;
+}
+
+.title {
+    background-color: var(--primary);
+    color: var(--secondary);
+}
+
+.employeeCard { 
+    background-color: var(--primary);
+    color: var(--secondary);
+
+}
+
+.cardInfo {
+    background-color: var(--secondary);
+    color: var(--tertiary);
+    font-size: large;
+}
+
+.employeeCard p {
+    border: solid 1px var(--tertiary);
+}
