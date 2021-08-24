@@ -1,15 +1,20 @@
+const Manager = require ('../lib/Manager');
+const Engineer = require ('../lib/Engineer');
+const Intern = require('../lib/Intern');
+
 // create the manager card 
 const generateManagerCard = (name, id, email, officeNumber) => {
+  let manager = new Manager(name, id, email, officeNumber)
   return `
           <article class="card m-4 employeeCard" style="width: 25rem;">
-            <h2 class="m-2">${name}</h2>
-            <h3 class="m-2"><i class="fas fa-mug-hot"></i> Manager</h3>
+            <h2 class="m-2">${manager.getName()}</h2>
+            <h3 class="m-2"><i class="fas fa-mug-hot"></i> ${manager.getRole()}</h3>
             <div class="card-body cardInfo">
-                <p class="card-text p-1">ID: ${id}</p>
-                <p class="card-text p-1">Email: <a href="mailto:${email}">${email}</a></p>
-                <p class="card-text p-1">Office Number: ${officeNumber}</p>
+                <p class="card-text p-1">ID: ${manager.getId()}</p>
+                <p class="card-text p-1">Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></p>
+                <p class="card-text p-1">Office Number: ${manager.officeNumber}</p>
             </div>
-          </article>`;
+          </article>`
 };
 // create the employee cards
 const generateEmployees = employeesArr => {
@@ -17,14 +22,15 @@ const generateEmployees = employeesArr => {
   ${employeesArr
     .filter(({ employeeType }) => employeeType === 'Engineer')
     .map(({ employeeType, name, id, email, gitHub }) => {
+      let engineer = new Engineer(name, id, email, gitHub)
       return `
           <article class="card m-4 employeeCard" style="width: 25rem;">
-              <h2 class="m-2">${name}</h2>
-              <h3 class="m-2"><i class="fas fa-tools"></i> ${employeeType}</h3>
+              <h2 class="m-2">${engineer.getName()}</h2>
+              <h3 class="m-2"><i class="fas fa-tools"></i> ${engineer.getRole}</h3>
               <div class="card-body cardInfo">
-                  <p class="card-text p-1">ID: ${id}</p>
-                  <p class="card-text p-1">Email: <a href="mailto:${email}">${email}</a></p>
-                  <p class="card-text p-1">GitHub: <a href="https://github.com/${gitHub}">${gitHub}</a></p>
+                  <p class="card-text p-1">ID: ${engineer.getId()}</p>
+                  <p class="card-text p-1">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></p>
+                  <p class="card-text p-1">GitHub: <a href="https://github.com/${engineer.gitHub}">${engineer.gitHub}</a></p>
               </div>
           </article>
     `;
@@ -33,14 +39,15 @@ const generateEmployees = employeesArr => {
     ${employeesArr
       .filter(({ employeeType }) => employeeType === 'Intern')
       .map(({ employeeType, name, id, email, school }) => {
-      return `
+        let intern = new Intern(name, id, email, school)
+        return `
           <article class="card m-4 employeeCard" style="width: 25rem;">
-              <h2 class="m-2">${name}</h2>
-              <h3 class="m-2"><i class="fas fa-user-graduate"></i> ${employeeType}</h3>
+              <h2 class="m-2">${intern.getName()}</h2>
+              <h3 class="m-2"><i class="fas fa-user-graduate"></i> ${intern.getRole()}</h3>
               <div class="card-body cardInfo">
-                  <p class="card-text p-1">ID: ${id}</p>
-                  <p class="card-text p-1">Email: <a href="mailto:${email}">${email}</a></p>
-                  <p class="card-text p-1">School: ${school}</p>
+                  <p class="card-text p-1">ID: ${intern.getId()}</p>
+                  <p class="card-text p-1">Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></p>
+                  <p class="card-text p-1">School: ${intern.school}</p>
               </div>
           </article>
     `;
